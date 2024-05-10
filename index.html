@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tier list creator</title>
+    <link rel="icon" href="assets/icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+
+    <link rel="preload" href="assets/check.svg" as="image" />
+    <style id="dynamic-styles"></style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.3/dragula.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+  </head>
+  <body>
+    <h1 class="headerTitle">
+      Tier List Creator
+      
+    </h1>
+    <main id="htmlContent">
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #ff7777"
+        >
+          <p spellcheck="false">0</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #feff7f"
+        >
+          <p spellcheck="false">1</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #7eff80"
+        >
+          <p spellcheck="false">2</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #7fffff"
+        >
+          <p spellcheck="false">3</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #807fff"
+        >
+          <p spellcheck="false">4</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="tier-label"
+          contenteditable="true"
+          style="background-color: #feaf30"
+        >
+          <p spellcheck="false">5</p>
+          <div class="tooltip" contenteditable="false">
+            <div class="color-picker"></div>
+          </div>
+        </div>
+        <div class="tier sort"></div>
+        <div class="tier-options">
+          <div class="options-container">
+            <div class="option delete">
+              <img
+                class="option-hover"
+                src="assets/trash.svg"
+                alt="Delete"
+                onclick="deleteRow(this)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-up.svg"
+                alt="Up"
+                onclick="moveRow(this, -1)"
+              />
+            </div>
+            <div class="option">
+              <img
+                class="option-hover"
+                src="assets/chevron-down.svg"
+                alt="Down"
+                onclick="moveRow(this, 1)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="images-bar" class="sort"></div>
+    <div id="buttons-container">
+      <input
+        type="checkbox"
+        id="square-img"
+        onchange="dynamicStyle(this, '.image { height: 80px; width: 80px; }')"
+      />
+      <label for="square-img">Square Images</label>
+      <button type="button" onclick="addRow()">New Tier</button>
+      <button type="button" onclick="selectImages()">Select Images</button>
+      <button id="btn" type="button">Download Image</button>
+    </div>
+    <script>
+      const elementcap = document.getElementById("htmlContent");
+      const downloadbtn = document.getElementById("btn");
+
+      downloadbtn.addEventListener("click", function () {
+        html2canvas(elementcap, {
+          allowTaint: true,
+          useCORS: true,
+        }).then((canvas) => {
+          const downloadLink = document.createElement("a");
+          downloadLink.href = canvas.toDataURL("image/png");
+          downloadLink.download = "Tier-Ranking.png";
+          downloadLink.click();
+        });
+      });
+    </script>
+  </body>
+</html>
